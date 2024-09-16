@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style1.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+    <div class="container">
+      <!-- Login Form -->
+      <div class="wrapper" id="login-form">
+        <div class="icon">
+          <a href="home.html" class="home-link">
+            <img src="logo1.png" alt="Home">
+          </a>
+        </div>
+        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+        <button class="g-signin-button" onclick="googleLogin()">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" alt="Google Logo" width="20px" height="20px">
+          Sign in with Google
+          <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+        </button>
+        <div class="input-box">
+          <input type="text" placeholder="Email ID" id="email-id">
+          <i class="fa fa-user"></i>
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="Password" id="password">
+          <i class="fa fa-lock"></i>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox"> Remember me</label>
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button class="btn" id="login-button">Login</button>
+        <div class="register-link">
+          <p>Don't have an account? <a href="register.html" id="show-register">Register</a></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        function onSignIn(googleUser) {
+          var profile = googleUser.getBasicProfile();
+          console.log('ID: ' + profile.getId());
+          console.log('Name: ' + profile.getName());
+          console.log('Image URL: ' + profile.getImageUrl());
+          console.log('Email: ' + profile.getEmail());
+
+          // Redirect to user details page with profile information
+          window.location.href = `user-details.html?id=${encodeURIComponent(profile.getId())}&name=${encodeURIComponent(profile.getName())}&imageUrl=${encodeURIComponent(profile.getImageUrl())}&email=${encodeURIComponent(profile.getEmail())}`;
+
+        function googleLogin() {
+          document.querySelector('.g-signin2').click();
+        }
+
+        // Handle traditional login form submission
+        document.getElementById('login-button').addEventListener('click', function(event) {
+          event.preventDefault();
+          const email = document.getElementById('email-id').value;
+          const password = document.getElementById('password').value;
+
+          // Simple validation
+          if (!email || !password) {
+            alert('Please enter both email and password.');
+            return;
+          }
+          
+          // Simulate server-side validation (replace this with actual validation logic)
+          // For example, you might send the email and password to a server here
+          // If login is successful:
+          alert('Login successful!');
+          // Redirect to user details page with placeholder information
+          window.location.href = `user-details.html?email=${encodeURIComponent(email)}`;
+        });
+      }
+    </script>
+</body>
+</html>

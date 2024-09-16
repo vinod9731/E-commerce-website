@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> THE BLAC | Ecommerce Website Design</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="home.html"><img src="images/logo2.png" width="125px"></a>
+            </div>
+
+            <nav>
+                <ul id="MenuItemsLeft">
+                    <li><a href="home.html">Home</a></li>&emsp;
+                    <li><a href="edition.html">Editions</a></li>&emsp;
+                    <li><a href="Store.html">Store</a></li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search...">
+                    <button type="button" onclick="redirectToSearch()">Search</button>
+                </div>
+                <ul id="MenuItemsRight">
+                    <li><a href="wishlist.html"><img src="images/w.jpg" width="30px" height="30px"></a>&emsp;
+                        <a href="cart.html"><img src="images/cart.jpg" width="30px" height="30px"></a>&nbsp;
+                    <li><a href="login.html"><img src="images/account.jpg" width="30px" height="30px"></a>
+                </ul>
+            </nav>
+            <!--<a href="cart.html"><img src="images/cart.jpg" width="30px" height="30px"></a>--->
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+        <div class="slider">
+            <div class="list">
+                <div class="item">
+                    <a href="product-details4.html"><img src="t-2.jpg" alt="Image 2"></a>
+                </div>
+                <div class="item">
+                    <a href="product-details3.html"><img src="t-3.jpg" alt="Image 1"></a>
+                </div>
+                <div class="item">
+                    <a href="Store.html"><img src="t-1.jpg" alt="Image 3"></a>
+                </div>
+                <div class="item">
+                    <a href="Store.html"><img src="t-4.jpg" alt="Image 4"></a>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="prev">&lt;</button>
+                <button id="next">&gt;</button>
+            </div>
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <script src="script.js"></script>
+    </div>
+</div>
+<!-------- featured products ---------->
+<div class="small-container">
+    <h2 class="title">Featured Products</h2>
+    <div class="row">
+        <div class="col-4">
+            <a href="product-details.html"><img src="images/product-1.jpg"></a>
+            <a href="product-details.html"><h4>Red Printed Tshirt</h4></a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <a class="pp">MRP-$125.00</a>
+            <a class="rr">40% OFF!</a>
+            <p>$50.00</p>
+            <button class="btn" onclick="window.location.href='store.html'">Go to Store</button>
+        </div>
+        <div class="col-4">
+            <a href="product-details5.html"><img src="images/product-4.jpg"></a>
+            <a href="product-details5.html"><h4>Blue Printed Tshirt</h4></a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <a class="pp">MRP-$125.00</a>
+            <a class="rr">40% OFF!</a>
+            <p>$65.00</p>
+            <button class="btn" onclick="window.location.href='store.html'">Go to Store</button>
+        </div>
+        <div class="col-4">
+            <a href="product-details5.html"><img src="images/black-hoddie.jpg"></a>
+            <a href="product-details5.html"><h4>Black Hoodie</h4></a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <a class="pp">MRP-$125.00</a>
+            <a class="rr">40% OFF!</a>
+            <p>$90.00</p>
+            <button class="btn" onclick="window.location.href='store.html'">Go to Store</button>
+        </div>
+        <div class="col-4">
+            <a href="product-details5.html"><img src="images/product-6.jpg"></a>
+            <a href="product-details5.html"><h4>Black Tshirt</h4></a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <a class="pp">MRP-$125.00</a>
+            <a class="rr">40% OFF!</a>
+            <p>$40.00</p>
+            <button class="btn" onclick="window.location.href='store.html'">Go to Store</button>
+        </div>
+    </div>
+    <h2 class="title">Latest Products</h2>
+    <div class="row">
+        <div class="col-4">
+            <a href="product-details5.html"><img src="images/p-2.jpg"></a>
+            <a href="product-details5.html"><h4>Men Relaxed Fit T-Shirt</h4></a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <a class="pp">MRP-$125.00</a>
+            <a class="rr">40% OFF!</a>
+            <p>$55.00</p>
+            <button class="btn" onclick="window.location.href='store.html'">Go to Store</button>
+        </div>
+        <div class="col-4">
+            <a href="product-details5.html"><img src="images/p-5.jpg"></a>
+            <a href="product-details5.html"><h4>Men Print Oversized Fit T-Shirt</h4></a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <a class="pp">MRP-$125.00</a>
+            <a class="rr">40% OFF!</a>
+            <p>$69.00</p>
+            <button class="btn" onclick="window.location.href='store.html'">Go to Store</button>
+        </div>
+        <div class="col-4">
+            <a href="product-details5.html"><img src="images/p-3.jpg"></a>
+            <a href="product-details5.html"><h4>Colourblock Polo T-Shirt</h4></a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <a class="pp">MRP-$125.00</a>
+            <a class="rr">40% OFF!</a>
+            <p>$59.00</p>
+            <button class="btn" onclick="window.location.href='store.html'">Go to Store</button>
+        </div>
+        <div class="col-4">
+            <a href="product-details5.html"><img src="images/p-4.jpg"></a>
+            <a href="product-details5.html"><h4>Men Floral Polo T-Shirt</h4></a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <a class="pp">MRP-$125.00</a>
+            <a class="rr">40% OFF!</a>
+            <p>$75.00</p>
+            <button class="btn" onclick="window.location.href='store.html'">Go to Store</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <a href="product-details5.html"><img src="images/p-6.jpg"></a>
+            <a href="product-details5.html"><h4>Graphic Oversized T-shirt</h4></a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <a class="pp">MRP-$125.00</a>
+            <a class="rr">40% OFF!</a>
+            <p>$85.00</p>
+            <button class="btn" onclick="window.location.href='store.html'">Go to Store</button>
+        </div>
+        <div class="col-4">
+            <a href="product-details5.html"><img src="images/p-7.jpg"></a>
+            <a href="product-details5.html"><h4>Colourblock Hoodie</h4></a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <a class="pp">MRP-$125.00</a>
+            <a class="rr">40% OFF!</a>
+            <p>$90.00</p>
+            <button class="btn" onclick="window.location.href='store.html'">Go to Store</button>
+        </div>
+        <div class="col-4">
+            <a href="product-details5.html"><img src="images/p-8.jpg"></a>
+            <a href="product-details5.html"><h4>Brand Printed Hoodie</h4></a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+            <a class="pp">MRP-$125.00</a>
+            <a class="rr">40% OFF!</a>
+            <p>$80.00</p>
+            <button class="btn" onclick="window.location.href='store.html'">Go to Store</button>
+        </div>
+        <div class="col-4">
+            <a href="product-details5.html"><img src="images/p-9.jpg"></a>
+            <a href="product-details5.html"><h4>Geometric Print Hooded Sweatshirt</h4></a>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+            <a class="pp">MRP-$125.00</a>
+            <a class="rr">40% OFF!</a>
+            <p>$75.00</p>
+            <button class="btn" onclick="window.location.href='store.html'">Go to Store</button>
+        </div>
+    </div>
+</div>
+<!-----------offer--------->
+<div class="offer">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/file.png" class="offer-img">
+            </div>
+            <div class="col-2">
+                <p>Exclusively Available on The BLAC.</p>
+                <h1>Porche T-Shirt</h1>
+                <small>This Porsche t-shirt features a stylish, oversized fit with a unique tie-dye pattern in shades of
+                    grey. The front showcases the iconic Porsche logo on the chest, detailed graphic of the Porsche 911
+                    GT3 RS.
+                </small>
+                <a href="product-details2.html" class="btn">Buy Now &#8594</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------footer------->
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col-2">
+                <img src="images/logo1.png">
+                <p>Our Motive Is To Sustainably Make the Pleasure and Benefits of Our Products To Everyone.</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li>Cupons</li>
+                    <li>Blog Post</li>
+                    <li>Return Policy</li>
+                    <li>Join Affiliate</li>
+                </ul>
+            </div>
+            <div class="footer-col-4">
+                <h3>Follow us</h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>Youtube</li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <p class="copy-right"> Copyrights 2024 - The Blac.</p>
+    </div>
+</div>
+<!---------js for toggle menu--------->
+<script>
+    var MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle() {
+        if (MenuItems.style.maxHeight == "0px") {
+            MenuItems.style.maxHeight = "200px";
+        } else {
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+</script>
+<script>
+    function redirectToSearch() {
+        const query = document.getElementById('search-input').value.trim();
+        if (query) {
+            window.location.href = `store.html?search=${encodeURIComponent(query)}`;
+        }
+    }
+</script>
+</body>
+</html>

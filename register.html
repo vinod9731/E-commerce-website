@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="style4.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    .phone-input {
+      display: flex;
+      align-items: center;
+    }
+    #country-code {
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px 0 0 5px;
+      font-size: 14px;
+      width: 80px; /* Adjust width as needed */
+    }
+    #phone-number {
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 0 5px 5px 0;
+      flex: 1;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Registration Form -->
+    <div class="wrapper" id="register-form">
+      <div class="icon">
+        <a href="home.html"><img src="images/l.png" width="125px"></a>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="First Name">
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Last Name">
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Email ID">
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="input-box">
+        <div class="phone-input">
+          <select id="country-code" aria-label="Country Code">
+            <option value="+1" selected>+1 (US)</option>
+            <option value="+44">+44UK</option>
+            <option value="+91">+91IN</option>
+            <!-- Add more country codes as needed -->
+          </select>
+          <input type="text" placeholder="Phone Number" id="phone-number">
+        </div>
+        <i class="fa fa-phone"></i>
+      </div>
+      <button class="btn" id="request-otp-button">Request OTP</button>
+      <div class="input-box" id="otp-box" style="display: none;">
+        <input type="text" placeholder="Enter OTP" id="otp-input">
+        <i class="fa fa-key"></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="New password">
+        <i class="fa fa-user"></i>
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Confirm Password">
+        <i class="fa fa-lock"></i>
+      </div>
+      <button class="btn" id="register-button" style="display: none;">Register</button>
+      <div class="register-link">
+        <p>Already have an account? <a href="login.html" id="show-login">Login</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let generatedOtp; // Variable to store the generated OTP
+
+    // Handle OTP request
+    document.getElementById('request-otp-button').addEventListener('click', function(event) {
+      event.preventDefault();
+      const countryCode = document.getElementById('country-code').value;
+      const phoneNumber = document.getElementById('phone-number').value;
+      const fullPhoneNumber = countryCode + phoneNumber;
+
+      // Validate phone number length
+      if (phoneNumber.length == 0) {
+        alert('Enter the Phone number');
+        return;
+      } else {
+        if (phoneNumber.length !== 10) {
+          alert('Phone number must be exactly 10 digits.');
+          return;
+        }
+      }
+
+      // Generate OTP
+      generatedOtp = Math.floor(100000 + Math.random() * 900000); // Generate a 6-digit OTP
+      console.log('Generated OTP:', generatedOtp); // Simulate sending OTP
+      alert('OTP sent to ' + fullPhoneNumber);
+
+      // Show OTP input and register button
+      document.getElementById('otp-box').style.display = 'block';
+      document.getElementById('register-button').style.display = 'block';
+    });
+
+    // Handle registration form submission
+    document.getElementById('register-button').addEventListener('click', function(event) {
+      event.preventDefault();
+      const otpInput = document.getElementById('otp-input').value;
+      
+      // Check if OTP is entered
+      if (!otpInput) {
+        alert('Please enter the OTP.');
+        return; // Exit the function if OTP is not entered
+      }
+
+      // Verify the OTP
+      if (otpInput != generatedOtp) {
+        alert('Wrong OTP. Please try again.');
+        return; // Exit the function if OTP is incorrect
+      }
+
+      // If OTP is correct, simulate success
+      alert('Registration successful! Please log in.');
+      document.getElementById('login-form').style.display = 'block';
+      document.getElementById('register-form').style.display = 'none';
+    });
+  </script>
+</body>
+</html>

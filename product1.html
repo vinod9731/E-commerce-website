@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>All products - The Blac</title>
+    <link rel="stylesheet" type="text/css" href="style3.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="wishlist.js" defer></script>
+</head>
+	<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="home.html"><img src="images/logo2.png" width="125px"></a>
+            </div>
+            
+            <nav>
+                <ul id="MenuItemsLeft">
+                    <li><a href="home.html">Home</a></li>&emsp;
+                    <li><a href="edition.html">Editions</a></li>&emsp;
+                    <li><a href="store.html">Store</a></li>
+                </ul>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Search...">
+                    <button type="button" onclick="redirectToSearch()">Search</button>
+                </div>
+                <ul id="MenuItemsRight">
+                    <li><a href="wishlist.html"><img src="images/w.jpg" width="30px" height="30px"></a>&emsp;
+                    <a href="cart.html"><img src="images/cart.jpg" width="30px" height="30px"></a>&nbsp;
+                    <li><a href="login.html"><img src="images/account.jpg" width="30px" height="30px"></a>
+                </ul>
+            </nav>
+            <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+        </div>
+
+        <!-- Single Product Details -->
+        <div class="small-container single-product">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/gallery-1.jpg" width="100%" id="ProductImg">
+                    <div class="small-img-row">
+                        <div class="small-img-col">
+                            <img src="images/gallery-1.jpg" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="images/gallery-2.jpg" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="images/gallery-3.jpg" width="100%" class="small-img">
+                        </div>
+                        <div class="small-img-col">
+                            <img src="images/gallery-4.jpg" width="100%" class="small-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <p>Home / T-shirt</p>
+                    <h1>Red Printed T-shirt by PUMA</h1>
+                    <h4>$50.00</h4>
+                    <select>
+                        <option>Select Size</option>
+                        <option>XXL</option>
+                        <option>XL</option>
+                        <option>Large</option>
+                        <option>Medium</option>
+                        <option>Small</option>
+                    </select>
+                    <input type="number" id="quantity" value="1">
+                    <button id="add-to-cart" class="btn">Add To Cart</button>
+<button id="add-to-wishlist" class="btn" onclick="addToWishlist('product-1')">Add to Wishlist</button>
+                    <h3>Product Details <i class="fa fa-indent"></i></h3>
+                    <br>
+                    <p>Give your summer wardrobe a style upgrade with the Puma Men's Active T-shirt. Team it with a pair of shorts for your morning workout or denims for an evening out with the guys.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <div class="small-container">
+            <div class="row row-2">
+                <h2>Related Product</h2>
+                <p>View more</p>
+            </div>
+        </div>
+
+        <!-- Products -->
+        <div class="small-container">
+            <div class="row">
+                <div class="col-4">
+                    <img src="images/p-6.jpg">
+                    <h4>Graphic Oversized T-shirt</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <p>$85.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="images/p-7.jpg">
+                    <h4>Colourblock Hoodie</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>$65.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="images/p-8.jpg">
+                    <h4>Brand Printed Hoodie</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <p>$75.00</p>
+                </div>
+                <div class="col-4">
+                    <img src="images/p-9.jpg">
+                    <h4>Geometric Print Hooded Seatshirt</h4>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p>$50.00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col-2">
+                        <img src="images/logo1.png">
+                        <p>Our Motive Is To Sustainably Make the Pleasure and Benefits of Our Products To Everyone.</p>
+                    </div>
+                    <div class="footer-col-3">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li>Coupons</li>
+                            <li>Blog Post</li>
+                            <li>Return Policy</li>
+                            <li>Join Affiliate</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-4">
+                        <h3>Follow us</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Instagram</li>
+                            <li>Youtube</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript for Toggle Menu -->
+        <script>
+            var MenuItems = document.getElementById("MenuItems");
+
+            MenuItems.style.maxHeight = "0px";
+
+            function menutoggle() {
+                if (MenuItems.style.maxHeight == "0px") {
+                    MenuItems.style.maxHeight = "200px";
+                } else {
+                    MenuItems.style.maxHeight = "0px";
+                }
+            }
+        </script>
+		<script>
+			function redirectToSearch() {
+				const query = document.getElementById('search-input').value.trim();
+				if (query) {
+					window.location.href = `store.html?search=${encodeURIComponent(query)}`;
+				}
+			}
+		</script>
+
+        <!-- JavaScript for Product Gallery -->
+        <script>
+            var ProductImg = document.getElementById("ProductImg");
+            var SmallImg = document.getElementsByClassName("small-img");
+
+            SmallImg[0].onclick = function () {
+                ProductImg.src = SmallImg[0].src;
+            }
+            SmallImg[1].onclick = function () {
+                ProductImg.src = SmallImg[1].src;
+            }
+            SmallImg[2].onclick = function () {
+                ProductImg.src = SmallImg[2].src;
+            }
+            SmallImg[3].onclick = function () {
+                ProductImg.src = SmallImg[3].src;
+            }
+
+            var ProductImg2 = document.getElementById("ProductImg2");
+            var SmallImg2 = document.getElementsByClassName("small-img2");
+
+            SmallImg2[0].onclick = function () {
+                ProductImg2.src = SmallImg2[0].src;
+            }
+            SmallImg2[1].onclick = function () {
+                ProductImg2.src = SmallImg2[1].src;
+            }
+            SmallImg2[2].onclick = function () {
+                ProductImg2.src = SmallImg2[2].src;
+			}
+            SmallImg2[3].onclick = function () {
+                ProductImg2.src = SmallImg2[3].src;
+            }
+        </script>
+		<script>
+			document.getElementById('add-to-cart').addEventListener('click', function() {
+				addToCart({
+					id: 'product-1',
+					name: 'Red Printed T-shirt by PUMA',
+					price: 50.00,
+					image: 'images/gallery-1.jpg',
+					quantity: parseInt(document.getElementById('quantity').value)
+				});
+			});
+		
+			
+			function addToCart(product) {
+				let cart = JSON.parse(localStorage.getItem('cart')) || [];
+				const existingProduct = cart.find(item => item.id === product.id);
+		
+				if (existingProduct) {
+					existingProduct.quantity += product.quantity;
+					existingProduct.subtotal = existingProduct.quantity * existingProduct.price;
+				} else {
+					product.subtotal = product.quantity * product.price;
+					cart.push(product);
+				}
+		
+				localStorage.setItem('cart', JSON.stringify(cart));
+				alert('Product added to cart!');
+			}
+		</script>
+
+        <!-- JavaScript for Add to Wishlist -->
+        <script>
+            document.getElementById('add-to-wishlist').addEventListener('click', function() {
+                const product = {
+                    name: 'Red Printed T-shirt by PUMA',
+                    price: 50.00,
+                    image: 'images/gallery-1.jpg',
+                    size: document.querySelector('select').value,
+                    quantity: document.getElementById('quantity').value
+                };
+
+                let wishlist = localStorage.getItem('wishlist');
+                if (wishlist) {
+                    wishlist = JSON.parse(wishlist);
+                } else {
+                    wishlist = [];
+                }
+                wishlist.push(product);
+                localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                alert('Product added to wishlist!');
+            });
+
+            document.querySelectorAll('.btn-wishlist').forEach(button => {
+                button.addEventListener('click', function() {
+                    const productName = this.dataset.name;
+                    const productPrice = parseFloat(this.dataset.price);
+                    const productImage = this.dataset.image;
+
+                    const product = {
+                        name: productName,
+                        price: productPrice,
+                        image: productImage,
+                        size: 'default', // or any other size logic
+                        quantity: 1
+                    };
+
+                    let wishlist = localStorage.getItem('wishlist');
+                    if (wishlist) {
+                        wishlist = JSON.parse(wishlist);
+                    } else {
+                        wishlist = [];
+                    }
+                    wishlist.push(product);
+                    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+                    alert('Product added to wishlist!');
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

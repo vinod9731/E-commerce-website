@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Wishlist - The Blac</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .wishlist-container {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .wishlist-container h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .wishlist-container .empty-message {
+            font-size: 18px;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+        }
+        .wishlist-item {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            transition: background-color 0.3s ease;
+        }
+        .wishlist-item:hover {
+            background-color: #f9f9f9;
+        }
+        .wishlist-item img {
+            width: 120px;
+            height: auto;
+            border-radius: 8px;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+        .wishlist-item img:hover {
+            transform: scale(1.05);
+        }
+        .wishlist-item h4 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .wishlist-item p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #666;
+        }
+        .remove-wishlist {
+            cursor: pointer;
+            color: #e74c3c;
+            font-size: 20px;
+            margin-left: auto;
+            transition: color 0.3s ease;
+        }
+        .remove-wishlist:hover {
+            color: #c0392b;
+        }
+        .wishlist-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="home.html"><img src="images/logo2.png" width="125px"></a>
+        </div>
+        
+        <nav>
+            <ul id="MenuItemsLeft">
+                <li><a href="home.html">Home</a></li>&emsp;
+                <li><a href="edition.html">Editions</a></li>&emsp;
+                <li><a href="store.html">Store</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search...">
+                <button type="button" onclick="redirectToSearch()">Search</button>
+            </div>
+            <ul id="MenuItemsRight">
+                <li><a href="wishlist.html"><img src="images/w.jpg" width="30px" height="30px"></a>&emsp;
+                <a href="cart.html"><img src="images/cart.jpg" width="30px" height="30px"></a>&nbsp;
+                <li><a href="final.html"><img src="images/account.jpg" width="30px" height="30px"></a>
+            </ul>
+        </nav>
+        <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+    </div>
+    <div class="wishlist-container">
+        <h2>Your Wishlist</h2>
+        <div id="wishlist-items"></div>
+        <div id="empty-message" class="empty-message" style="display: none;">
+            Your wishlist is empty.
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-2">
+                    <img src="images/logo1.png">
+                    <p>Our Motive Is To Sustainably Make the Pleasure and Benefits of Our Products To Everyone.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="wishlist.js" defer></script>
+</body>
+</html>

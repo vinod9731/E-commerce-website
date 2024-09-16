@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Cart - The Blac</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .home-link {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+        }
+        .home-link img {
+            width: 150px; /* Adjust the size as needed */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .home-link img:hover {
+            transform: scale(1.1);
+        }
+        .cart-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+        }
+        .cart-header h2 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item img {
+            width: 100px;
+            border-radius: 8px;
+        }
+        .cart-item-name {
+            flex: 2;
+            margin-left: 20px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+        }
+        .cart-item-quantity button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .cart-item-quantity button:hover {
+            background-color: #555;
+        }
+        .cart-item-quantity input {
+            width: 50px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        .cart-item-price {
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .cart-item-remove {
+            cursor: pointer;
+            color: red;
+            font-size: 20px;
+        }
+        .total {
+            text-align: right;
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .checkout {
+            text-align: right;
+            margin-top: 10px;
+        }
+        .checkout-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #333;
+            border-radius: 5px;
+        }
+        .checkout-btn:hover {
+            background-color: #555;
+        }
+        .home-btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .home-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #333;
+            border-radius: 5px;
+        }
+        .home-btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+          <div class="logo">
+              <a href="home.html"><img src="images/logo2.png" width="125px"></a>
+          </div>
+          
+          <nav>
+              <ul id="MenuItemsLeft">
+                  <li><a href="home.html">Home</a></li>&emsp;
+                  <li><a href="edition.html">Editions</a></li>&emsp;
+                  <li><a href="Store.html">Store</a></li>
+              </ul>
+              <div class="search-bar">
+                  <input type="text" id="search-input" placeholder="Search...">
+                  <button type="button" onclick="redirectToSearch()">Search</button>
+              </div>
+              <ul id="MenuItemsRight">
+                  <li><a href="wishlist.html"><img src="images/w.jpg"width="30px" height="30px"></a>&emsp;
+                  <a href="cart.html"><img src="images/cart.jpg" width="30px" height="30px"></a>&nbsp;
+                  <li><a href="final.html"><img src="images/account.jpg" width="30px" height="30px"></a>
+              </ul>
+          </nav>
+          <!--<a href="cart.html"><img src="images/cart.jpg" width="30px" height="30px"></a>--->
+          <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+      </div>
+
+    <div class="cart-container">
+        <div class="cart-header">
+            <h2>Cart</h2>
+        </div>
+        <div id="cart-items"></div>
+        <div class="total">
+            <p>Total: $<span id="cart-total">0.00</span></p>
+        </div>
+        <div class="checkout">
+            <a href="checkout.html" class="checkout-btn">Buy Now</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-2">
+                  <img src="images/logo1.png">
+                  <p>Our Motive Is To Sustainably Make the Pleasure and Benefits of Our Products To Everyone.</p>
+                </div>
+                <div class="footer-col-3">
+                  <h3>Useful Links</h3>
+                  <ul>
+                      <li>Cupons</li>
+                      <li>Blog Post</li>
+                      <li>Return Policy</li>
+                      <li>Join Affiliate</li>
+                  </ul>
+          </div>
+              <div class="footer-col-4">
+                  <h3>Follow us</h3>
+                  <ul>
+                      <li>Facebook</li>
+                      <li>Twitter</li>
+                      <li>Instagram</li>
+                      <li>Youtube</li>
+                  </ul>
+          </div>
+      </div>
+    </div>
+
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+
+            let total = 0;
+
+            cart.forEach(product => {
+                total += product.subtotal;
+
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="cart-item-name">${product.name}</div>
+                    <div class="cart-item-quantity">
+                        <button onclick="updateQuantity('${product.id}', -1)">-</button>
+                        <input type="text" value="${product.quantity}" readonly>
+                        <button onclick="updateQuantity('${product.id}', 1)">+</button>
+                    </div>
+                    <div class="cart-item-price">$${product.subtotal.toFixed(2)}</div>
+                    <div class="cart-item-remove" onclick="removeFromCart('${product.id}')">&times;</div>
+                `;
+
+                cartItemsContainer.appendChild(cartItem);
+            });
+
+            document.getElementById('cart-total').innerText = total.toFixed(2);
+        }
+
+        function updateQuantity(id, change) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const productIndex = cart.findIndex(product => product.id === id);
+
+            if (productIndex > -1) {
+                cart[productIndex].quantity += change;
+
+                if (cart[productIndex].quantity <= 0) {
+                    cart.splice(productIndex, 1);
+                } else {
+                    cart[productIndex].subtotal = cart[productIndex].quantity * cart[productIndex].price;
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
+            }
+        }
+
+        function removeFromCart(id) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(product => product.id !== id);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        document.addEventListener('DOMContentLoaded', loadCart);
+    </script>
+    <script>
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+    
+            let total = 0;
+    
+            cart.forEach(product => {
+                total += product.subtotal;
+    
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="cart-item-name">${product.name}</div>
+                    <div class="cart-item-quantity">
+                        <button onclick="updateQuantity('${product.id}', -1)">-</button>
+                        <input type="text" value="${product.quantity}" readonly>
+                        <button onclick="updateQuantity('${product.id}', 1)">+</button>
+                    </div>
+                    <div class="cart-item-price">$${product.subtotal.toFixed(2)}</div>
+                    <div class="cart-item-remove" onclick="removeFromCart('${product.id}')">&times;</div>
+                `;
+    
+                cartItemsContainer.appendChild(cartItem);
+            });
+    
+            document.getElementById('cart-total').innerText = total.toFixed(2);
+        }
+    
+        function updateQuantity(id, change) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const productIndex = cart.findIndex(product => product.id === id);
+    
+            if (productIndex > -1) {
+                cart[productIndex].quantity += change;
+    
+                if (cart[productIndex].quantity <= 0) {
+                    cart.splice(productIndex, 1);
+                } else {
+                    cart[productIndex].subtotal = cart[productIndex].quantity * cart[productIndex].price;
+                }
+    
+                localStorage.setItem('cart', JSON.stringify(cart));
+                loadCart();
+            }
+        }
+    
+        function removeFromCart(id) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(product => product.id !== id);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+    
+        document.addEventListener('DOMContentLoaded', loadCart);
+    </script>
+    
+</body>
+</html>

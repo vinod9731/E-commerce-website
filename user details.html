@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Details</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="container">
+      <div class="wrapper" id="user-details">
+        <h1>User Details</h1>
+        <p><strong>ID:</strong> <span id="user-id"></span></p>
+        <p><strong>Name:</strong> <span id="user-name"></span></p>
+        <p><strong>Email:</strong> <span id="user-email"></span></p>
+        <p><strong>Image URL:</strong> <span id="user-image"></span></p>
+        <img id="profile-image" src="" alt="Profile Image" style="max-width: 100px; max-height: 100px;">
+      </div>
+    </div>
+
+    <script>
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+          name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+          var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+          var results = regex.exec(location.search);
+          return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Set user details from URL parameters
+        document.getElementById('user-id').textContent = getUrlParameter('id');
+        document.getElementById('user-name').textContent = getUrlParameter('name');
+        document.getElementById('user-email').textContent = getUrlParameter('email');
+        var imageUrl = getUrlParameter('imageUrl');
+        if (imageUrl) {
+          document.getElementById('user-image').textContent = imageUrl;
+          document.getElementById('profile-image').src = imageUrl;
+        } else {
+          document.getElementById('profile-image').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

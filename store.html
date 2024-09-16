@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Store - The Blac</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="wishlist.js" defer></script>
+    <style>
+        .wishlist-icon {
+            cursor: pointer;
+            color: grey;
+            font-size: 24px; /* Increase icon size here */
+            transition: color 0.3s ease;
+        }
+
+        .wishlist-icon.wishlist-added {
+            color: red;
+        }
+        .btn-vinod {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #333;
+            border-radius: 5px;
+        }
+        .btn-vinod:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+            <a href="home.html"><img src="images/logo2.png" width="125px"></a>
+        </div>
+        
+        <nav>
+            <ul id="MenuItemsLeft">
+                <li><a href="home.html">Home</a></li>&emsp;
+                <li><a href="edition.html">Editions</a></li>&emsp;
+                <li><a href="Store.html">Store</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search...">
+                <button type="button" onclick="redirectToSearch()">Search</button>
+            </div>
+            <ul id="MenuItemsRight">
+                <li><a href="wishlist.html"><img src="images/w.jpg"width="30px" height="30px"></a>&emsp;
+                <a href="cart.html"><img src="images/cart.jpg" width="30px" height="30px"></a>&nbsp;
+                <li><a href="login.html"><img src="images/account.jpg" width="30px" height="30px"></a>
+            </ul>
+        </nav>
+        <!--<a href="cart.html"><img src="images/cart.jpg" width="30px" height="30px"></a>--->
+        <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+    </div>
+<div class="small-container">
+        <div class="row row-2">
+            <h2>All products</h2>
+            <select id="sort-select" onchange="handleSortChange()">
+                <option value="default">Default sorting</option>
+                <option value="price">Sort by price</option>
+                <option value="rating">Sort by rating</option>
+            </select>
+        </div>
+
+        <div class="row" id="products-container">
+            <div class="col-4" data-price="50.00" data-rating="4">
+                <a href="product-details.html"><img src="images/product-1.jpg"></a>
+                <h4>Red Printed Tshirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <a class="pp">MRP-$125.00</a>
+                <a class="rr">40% OFF!</a>
+                <p>$50.00</p>
+                <div>
+                    <p><button class="btn-vinod" onclick="addToCart('product-1', 'Red Printed Tshirt', 50.00, 'images/product-1.jpg')">Add To Cart</button></p>
+                    <button class="wishlist-icon" onclick="toggleWishlist('product-1')">❤</button>
+                </div>
+            </div>
+            <div class="col-4" data-price="65.00" data-rating="4">
+                <a href="product-details.html"><img src="images/product-4.jpg"></a>
+                <h4>Blue Printed Tshirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <a class="pp">MRP-$119.00</a>
+                 <a class="rr">30% OFF!</a>
+                 <p>$65.00</p>
+                <div>
+                    <p><button class="btn-vinod" onclick="addToCart('product-4', 'Blue Printed Tshirt', 65.00, 'images/product-4.jpg')">Add To Cart</button></p>
+                    <button class="wishlist-icon" onclick="toggleWishlist('product-4')">❤</button>
+                </div>
+            </div>
+            <div class="col-4" data-price="90.00" data-rating="4">
+                <a href="product-details5.html"><img src="images/black-hoddie.jpg"></a>
+                <h4>Black Hoodie</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <a class="pp">MRP-$199.00</a>
+                 <a class="rr">44% OFF!</a>
+                 <p>$90.00</p>
+                <div>
+                    <p><button class="btn-vinod" onclick="addToCart('black-hoddie', 'Black Hoodie', 90.00, 'images/black-hoddie.jpg')">Add To Cart</button></p>
+                    <button class="wishlist-icon" onclick="toggleWishlist('black-hoddie')">❤</button>
+                </div>
+            </div>
+            <div class="col-4" data-price="40.00" data-rating="4.5">
+                <a href="product-details.html"><img src="images/product-6.jpg"></a>
+                <h4>Black Tshirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <a class="pp">MRP-$89.00</a>
+                 <a class="rr">45% OFF!</a>
+                 <p>$40.00</p>
+                <div>
+                    <p><button class="btn-vinod" onclick="addToCart('product-6', 'Black Tshirt', 40.00, 'images/product-6.jpg')">Add To Cart</button></p>
+                    <button class="wishlist-icon" onclick="toggleWishlist('product-6')">❤</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="products-container-2">
+            <div class="col-4" data-price="55.00" data-rating="4.5">
+                <a href="product-details.html"><img src="images/p-2.jpg"></a>
+                <h4>Men Relaxed Fit T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <a class="pp">MRP-$169.00</a>
+                 <a class="rr">33% OFF!</a>
+                 <p>$55.00</p>
+                <div>
+                    <p><button class="btn-vinod" onclick="addToCart('p-2', 'Men Relaxed Fit T-Shirt', 55.00, 'images/p-2.jpg')">Add To Cart</button></p>
+                    <button class="wishlist-icon" onclick="toggleWishlist('p-2')">❤</button>
+                </div>
+            </div>
+            <div class="col-4" data-price="69.00" data-rating="4">
+                <a href="product-details.html"><img src="images/p-5.jpg"></a>
+                <h4>Men Print Oversized Fit T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <a class="pp">MRP-$133.00</a>
+                 <a class="rr">52% OFF!</a>
+                 <p>$69.00</p>
+                <div>
+                    <p><button class="btn-vinod" onclick="addToCart('p-5', 'Men Print Oversized Fit T-Shirt', 69.00, 'images/p-5.jpg')">Add To Cart</button></p>
+                    <button class="wishlist-icon" onclick="toggleWishlist('p-5')">❤</button>
+                </div>
+            </div>
+            <div class="col-4" data-price="59.00" data-rating="3">
+                <a href="product-details.html"><img src="images/p-3.jpg"></a>
+                <h4>Colourblock Polo T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <a class="pp">MRP-$149.00</a>
+                 <a class="rr">40% OFF!</a>
+                 <p>$59.00</p>
+                <div>
+                    <p><button class="btn-vinod" onclick="addToCart('p-3', 'Colourblock Polo T-Shirt', 59.00, 'images/p-3.jpg')">Add To Cart</button></p>
+                    <button class="wishlist-icon" onclick="toggleWishlist('p-3')">❤</button>
+                </div>
+            </div>
+            <div class="col-4" data-price="75.00" data-rating="4.5">
+                <a href="product-details.html"><img src="images/p-4.jpg"></a>
+                <h4>Men Floral Polo T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <a class="pp">MRP-$215.00</a>
+                 <a class="rr">35% OFF!</a>
+                 <p>$75.00</p>
+                <div>
+                    <p><button class="btn-vinod" onclick="addToCart('p-4', 'Men Floral Polo T-Shirt', 75.00, 'images/p-4.jpg')">Add To Cart</button></p>
+                    <button class="wishlist-icon" onclick="toggleWishlist('p-4')">❤</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="products-container-3">
+            <div class="col-4" data-price="85.00" data-rating="3.5">
+                <a href="product-details.html"><img src="images/p-6.jpg"></a>
+                <h4>Men Graphic Print T-Shirt</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <a class="pp">MRP-$170.00</a>
+                 <a class="rr">50% OFF!</a>
+                 <p>$85.00</p>
+                <div>
+                    <p><button class="btn-vinod" onclick="addToCart('p-6', 'Men Graphic Print T-Shirt', 85.00, 'images/p-6.jpg')">Add To Cart</button></p>
+                    <button class="wishlist-icon" onclick="toggleWishlist('p-6')">❤</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-2">
+                  <img src="images/logo1.png">
+                  <p>Our Motive Is To Sustainably Make the Pleasure and Benefits of Our Products To Everyone.</p>
+                </div>
+                <div class="footer-col-3">
+                  <h3>Useful Links</h3>
+                  <ul>
+                      <li>Cupons</li>
+                      <li>Blog Post</li>
+                      <li>Return Policy</li>
+                      <li>Join Affiliate</li>
+                  </ul>
+          </div>
+              <div class="footer-col-4">
+                  <h3>Follow us</h3>
+                  <ul>
+                      <li>Facebook</li>
+                      <li>Twitter</li>
+                      <li>Instagram</li>
+                      <li>Youtube</li>
+                  </ul>
+          </div>
+      </div>
+    </div>
+
+    <script>
+        const productsContainer = document.getElementById('products-container');
+        const productsContainer2 = document.getElementById('products-container-2');
+        const productsContainer3 = document.getElementById('products-container-3');
+
+        let initialOrder = []; // To store the initial order of products
+
+        function addToCart(id, name, price, image) {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const productIndex = cart.findIndex(product => product.id === id);
+
+            if (productIndex > -1) {
+                cart[productIndex].quantity += 1;
+                cart[productIndex].subtotal = cart[productIndex].quantity * cart[productIndex].price;
+            } else {
+                cart.push({ id, name, price, quantity: 1, subtotal: price, image });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Product added to cart');
+        }
+
+        function toggleWishlist(id) {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const wishlistIcon = document.querySelector(`[onclick="toggleWishlist('${id}')"]`);
+            
+            const productIndex = wishlist.indexOf(id);
+            if (productIndex > -1) {
+                wishlist.splice(productIndex, 1);
+                wishlistIcon.classList.remove('wishlist-added');
+            } else {
+                wishlist.push(id);
+                wishlistIcon.classList.add('wishlist-added');
+            }
+
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+        }
+
+        function handleSortChange() {
+            const sortValue = document.getElementById('sort-select').value;
+            const queryParams = new URLSearchParams(window.location.search);
+
+            if (sortValue === 'default') {
+                queryParams.delete('sort'); // Remove the sort parameter
+                window.location.search = queryParams.toString(); // Reload the page without sort parameter
+            } else {
+                queryParams.set('sort', sortValue);
+                window.location.search = queryParams.toString(); // Reload with sort parameter
+            }
+        }
+
+        function applySorting() {
+            const sortValue = new URLSearchParams(window.location.search).get('sort');
+            const containers = [productsContainer, productsContainer2, productsContainer3];
+
+            if (!sortValue || sortValue === 'default') {
+                // Default sorting: Reorder items to their initial order
+                initialOrder.forEach(item => {
+                    containers.forEach(container => {
+                        const product = document.getElementById(item.id);
+                        if (product) {
+                            container.appendChild(product);
+                        }
+                    });
+                });
+                return;
+            }
+
+            // Collect all products
+            let products = [];
+            containers.forEach(container => {
+                Array.from(container.children).forEach(product => {
+                    products.push(product);
+                });
+                container.innerHTML = ''; // Clear container
+            });
+
+            // Sort products
+            if (sortValue === 'price') {
+                products.sort((a, b) => parseFloat(a.dataset.price) - parseFloat(b.dataset.price));
+            } else if (sortValue === 'rating') {
+                products.sort((a, b) => parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating));
+            }
+
+            // Append sorted products
+            containers.forEach(container => {
+                products.forEach(product => {
+                    container.appendChild(product);
+                });
+            });
+        }
+
+        function getSearchQuery() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('search') ? params.get('search').toLowerCase() : '';
+        }
+    
+        function filterProducts(query) {
+            const containers = [productsContainer, productsContainer2, productsContainer3];
+            
+            containers.forEach(container => {
+                Array.from(container.children).forEach(product => {
+                    const productName = product.querySelector('h4').innerText.toLowerCase();
+                    if (productName.includes(query)) {
+                        product.style.display = '';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        }
+    
+        document.addEventListener('DOMContentLoaded', () => {
+            const query = getSearchQuery();
+            if (query) {
+                filterProducts(query);
+            }
+
+            // Store initial order of products
+            const allProducts = [productsContainer, productsContainer2, productsContainer3];
+            allProducts.forEach(container => {
+                Array.from(container.children).forEach(product => {
+                    initialOrder.push({ id: product.id, element: product });
+                });
+            });
+
+            applySorting(); // Apply sorting on page load based on URL parameter
+        });
+
+        function redirectToSearch() {
+            const query = document.getElementById('search-input').value.trim();
+            if (query) {
+                window.location.href = `store.html?search=${encodeURIComponent(query)}`;
+            }
+        }
+    </script>
+    
+</body>
+</html>
